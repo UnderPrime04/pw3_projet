@@ -1,0 +1,16 @@
+<div>
+  Personagem: {{nome}}
+  <div *ngIf='ehBruxo; else naoBruxo'>
+    Varinha: {{varinha}}
+  </div>
+  <div [ngSwitch]="nivel">
+    <p *ngSwitchCase="1">Mestre</p>
+    <p *ngSwitchCase="2">Professor</p>
+    <p *ngSwitchCase="3">Comum</p>
+    <p *ngSwitchCase="4">Aprendiz</p>
+    <p *ngSwitchDefault>Sem classificação</p>
+  </div>
+    <ng-template #naoBruxo>
+      <p>Não é bruxo</p>
+    </ng-template>
+</div>
